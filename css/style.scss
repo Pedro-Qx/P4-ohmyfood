@@ -141,6 +141,7 @@ $deco-color0:#003A68;
 @keyframes loadersetoff {
     0% {
         opacity: 1;
+        z-index: 1000;
     }
     70% {
         opacity: 1;
@@ -149,20 +150,7 @@ $deco-color0:#003A68;
     100%{
         opacity: 0;
         display: none;
-    }
-}
-
-@keyframes bodysetoff {
-    0% {
-       opacity: 0;
-       display: none;
-    }
-    70% {
-        opacity:0;
-    }
-    100%{
-        opacity: 1;
-       display: block;
+        z-index: -1;
     }
 }
 
@@ -184,7 +172,7 @@ body {
         height: 100vh;            
         background-color: #353535;
         animation: loadersetoff 5s forwards;
-        z-index: 1000;
+        
            
         .loader {
             display: flex;
