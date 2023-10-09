@@ -78,9 +78,17 @@ a {
     height: 51px;
     width: 15px;
   }
+  30% {
+    height: 24px;
+    width: 23px;
+  }
   50% {
     height: 8px;
     width: 40px;
+  }
+  80% {
+    height: 48px;
+    width: 32px;
   }
   100% {
     left: 400px;
@@ -126,7 +134,7 @@ body .loader-container {
   align-items: center;
   height: 100vh;
   background-color: #353535;
-  animation: loadersetoff 5s forwards;
+  animation: loadersetoff 3s forwards;
 }
 body .loader-container .loader {
   display: flex;
@@ -145,13 +153,13 @@ body .loader-container .loader .loader__font {
   color: white;
 }
 body .loader-container .loader .anim-oh {
-  animation: anim1s 1s backwards;
+  animation: anim1s 500ms backwards;
 }
 body .loader-container .loader .anim-my {
-  animation: anim1s 1s backwards 1s;
+  animation: anim1s 500ms backwards 500ms;
 }
 body .loader-container .loader .anim-food {
-  animation: anim1s 1s backwards 2s;
+  animation: anim1s 500ms backwards 1s;
 }
 body .loader-container .loader::before, body .loader-container .loader::after {
   content: "";
@@ -160,7 +168,7 @@ body .loader-container .loader::before, body .loader-container .loader::after {
   height: 15px;
   background: linear-gradient(#FF79DA, #9356DC);
   position: absolute;
-  animation: load 0.7s alternate ease-in-out 6;
+  animation: load 0.7s alternate ease-in-out 4;
 }
 body .loader-container .loader::before {
   top: 5px;
@@ -433,10 +441,10 @@ body main .main__container-resto .resto__card-ttl-icon .resto__card-icon i {
   font-size: 28px;
 }
 body main .main__container-resto .resto__card-ttl-icon .resto__card-icon:hover > i {
-  animation: heart 1s ease-in-out forwards;
+  animation: heart 500ms ease-in-out forwards;
 }
 body main .main__container-resto .resto__card-ttl-icon .resto__card-icon:not(:hover) > i {
-  animation: heart-off 1s ease-in-out;
+  animation: heart-off 500ms ease-in-out;
 }
 body footer {
   padding-top: 5px;

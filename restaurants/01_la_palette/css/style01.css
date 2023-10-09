@@ -45,32 +45,104 @@ a {
     opacity: 0;
   }
 }
-@keyframes yourchoise {
+@keyframes choiseMenu {
   0% {
-    transform: scaleX(0) rotate(360deg);
+    transform: scaleX(0);
     transform-origin: right;
     display: none;
   }
   50%, 100% {
-    transform: scaleX(0.5) rotate(90deg);
+    transform: scaleX(0.5);
   }
   100% {
-    transform: scaleX(1) rotate(0deg);
+    transform: scaleX(1);
   }
 }
-@keyframes yourchoise2 {
+@keyframes choiseMenuOff {
   0% {
-    transform: scaleX(1) rotate(0deg);
+    transform: scaleX(1);
     transform-origin: left;
   }
   50%, 100% {
-    transform: scaleX(0.5) rotate(-90deg);
+    transform: scaleX(0.5);
   }
   100% {
-    transform: scaleX(0) rotate(-360deg);
+    transform: scaleX(0);
     display: none;
   }
 }
+@keyframes mainCardFull {
+  0% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50%, 100% {
+    transform: scaleX(0.9);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(0.9);
+    transform-origin: left;
+  }
+}
+@keyframes mainCardLess {
+  0% {
+    transform: scaleX(0.9);
+    transform-origin: left;
+  }
+  50%, 100% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*****tick qui tourne*****
+@keyframes yourchoise{
+    0% {
+        transform: scaleX(0) rotate(360deg);
+        transform-origin: right;
+        display: none;
+    }
+
+
+    50%,100%{
+        transform: scaleX(0.5) rotate(90deg);
+    }
+    100% {
+
+        transform: scaleX(1) rotate(0deg);
+    }
+}
+
+@keyframes yourchoise2{
+    0% {
+        transform: scaleX(1) rotate(0deg);
+        transform-origin: left;
+
+    }
+
+
+    50%,100%{
+        transform: scaleX(0.5) rotate(-90deg);
+
+
+    }
+    100% {
+
+        transform: scaleX(0) rotate(-360deg);
+        display: none;
+    }
+
+  &:hover > .card__check{
+                        animation: yourchoise 400ms backwards linear;
+                    }
+
+                    &:not(:hover) > .card__check{
+                        animation: yourchoise2 400ms forwards linear;
+                    }
+
+}*/
 @keyframes anim-subttl {
   0% {
     transform: translate(-500rem);
@@ -167,10 +239,10 @@ body main .main__container .main__ttl-icon .main__icon {
   animation: scrolldownn 2s ease-in backwards 3s;
 }
 body main .main__container .main__ttl-icon .main__icon:hover > i {
-  animation: heart 1s ease-in-out forwards;
+  animation: heart 500ms ease-in-out forwards;
 }
 body main .main__container .main__ttl-icon .main__icon:not(:hover) > i {
-  animation: heart-off 1s ease-in-out;
+  animation: heart-off 500ms ease-in-out;
 }
 body main .main__container .main__subttl {
   font-size: 16px;
@@ -179,13 +251,13 @@ body main .main__container .main__subttl {
   width: 38px;
 }
 body main .main__container .main__subttl-entr {
-  animation: anim-subttl 2s ease-in-out;
+  animation: anim-subttl 1s ease-in-out;
 }
 body main .main__container .main__subttl-plat {
-  animation: anim-subttl 2s ease-in-out 500ms;
+  animation: anim-subttl 1s ease-in-out 500ms;
 }
 body main .main__container .main__subttl-dess {
-  animation: anim-subttl 2s ease-in-out 1s;
+  animation: anim-subttl 1s ease-in-out 1s;
 }
 body main .main__container .main__container-menu {
   width: 100%;
@@ -195,7 +267,7 @@ body main .main__container .main__container-menu {
   align-items: center;
   gap: 20px;
   padding-bottom: 40px;
-  animation: scrolldownn 2s ease-in backwards 3s;
+  animation: scrolldownn 2s ease-in backwards 2s;
 }
 body main .main__container .main__container-menu .main__card {
   width: 100%;
@@ -224,7 +296,7 @@ body main .main__container .main__container-menu .main__card-ttl .card__subttl-p
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 96%;
 }
 body main .main__container .main__container-menu .main__card-ttl .card__subttl-price .card__subttl {
   font-weight: 300;
@@ -245,13 +317,14 @@ body main .main__container .main__container-menu .main__card .card__check {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 12%;
+  left: 96%;
+  height: 73px;
   border: solid;
-  color: #008766;
+  background-color: #008766;
+  color: white;
   position: absolute;
-  top: 12px;
-  left: 92%;
+  border-radius: 0px 16px 16px 0px;
   z-index: 8;
 }
 body main .main__container .main__container-menu .main__card .card__check i {
@@ -260,12 +333,16 @@ body main .main__container .main__container-menu .main__card .card__check i {
 }
 body main .main__container .main__container-menu .main__card:hover {
   filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+  animation: mainCardFull 400ms both linear;
+}
+body main .main__container .main__container-menu .main__card:not(:hover) {
+  animation: mainCardLess 400ms forwards linear;
 }
 body main .main__container .main__container-menu .main__card:hover > .card__check {
-  animation: yourchoise 400ms backwards linear;
+  animation: choiseMenu 400ms backwards linear;
 }
 body main .main__container .main__container-menu .main__card:not(:hover) > .card__check {
-  animation: yourchoise2 400ms forwards linear;
+  animation: choiseMenuOff 400ms forwards linear;
 }
 body main .main__container .main__btn-commande {
   display: flex;
@@ -314,6 +391,9 @@ body footer ul {
 body footer ul li a {
   color: white;
 }
+body footer ul li a:hover {
+  font-size: 20px;
+}
 body footer ul li i {
   color: white;
   font-size: 16px;
@@ -321,11 +401,38 @@ body footer ul li i {
 }
 
 @media (min-width: 570px) {
+  @keyframes mainCardFull {
+    50%, 100% {
+      transform: scaleX(0.92);
+      transform-origin: left;
+    }
+    100% {
+      transform: scaleX(0.92);
+      transform-origin: left;
+    }
+  }
+  @keyframes mainCardLess {
+    0% {
+      transform: scaleX(0.92);
+      transform-origin: left;
+    }
+  }
   body main .main__container .main__card {
     padding-right: 0%;
   }
+  body main .main__container .main__card .card__subttl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: nowrap;
+  }
   body main .main__container .main__card-price {
     left: 92%;
+  }
+  body main .main__container .main__card .card__check {
+    width: 8%;
   }
   body footer ul {
     display: flex;
@@ -335,18 +442,6 @@ body footer ul li i {
     flex-wrap: wrap;
     padding-top: 50px;
     width: 80%;
-  }
-  .card__subttl {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-weight: 300;
-    font-size: 15px;
-    margin-top: 0;
-    width: 250px;
-    overflow: visible;
-    text-overflow: unset;
-    white-space: nowrap;
   }
 }
 @media (min-width: 768px) {
@@ -366,9 +461,32 @@ body footer ul li i {
   }
 }
 @media (min-width: 1370px) {
+  @keyframes mainCardFull {
+    50%, 100% {
+      transform: scaleX(0.96);
+      transform-origin: left;
+    }
+    100% {
+      transform: scaleX(0.96);
+      transform-origin: left;
+    }
+  }
+  @keyframes mainCardLess {
+    0% {
+      transform: scaleX(0.96);
+      transform-origin: left;
+    }
+  }
   body main .main__container .main__ttl-icon {
     padding-left: 20%;
     padding-right: 20%;
+  }
+  body main .main__container .main__container-menu .main__card-ttl .card__subttl-price {
+    width: 98%;
+  }
+  body main .main__container .main__container-menu .main__card .card__check {
+    width: 7%;
+    left: 97%;
   }
 }
 @media (min-width: 1440px) {
