@@ -41,15 +41,10 @@ $deco-color02:#008766;
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.2));
 }
 
-
-
-
 //animations-heart//
 @keyframes heart {
     from {
         opacity: 0;
-        
-        
     }
 
     to{
@@ -76,7 +71,6 @@ $deco-color02:#008766;
     }
 }
 
-
 //animations-tick//
 @keyframes choiseMenu{
     0% {
@@ -99,71 +93,17 @@ $deco-color02:#008766;
     0% {
         transform: scaleX(1);
         transform-origin: left;
-        
     }
     
       
     50%,100%{
         transform: scaleX(0.5);
-        
-        
     }
     100% {
-        
         transform: scaleX(0);
         display: none;
     }
 }
-
-
-/*****tick qui tourne*****
-@keyframes yourchoise{
-    0% {
-        transform: scaleX(0) rotate(360deg);
-        transform-origin: right;
-        display: none;
-    }
-    
-      
-    50%,100%{
-        transform: scaleX(0.5) rotate(90deg);
-    }
-    100% {
-        
-        transform: scaleX(1) rotate(0deg);
-    }
-}
-
-@keyframes yourchoise2{
-    0% {
-        transform: scaleX(1) rotate(0deg);
-        transform-origin: left;
-        
-    }
-    
-      
-    50%,100%{
-        transform: scaleX(0.5) rotate(-90deg);
-        
-        
-    }
-    100% {
-        
-        transform: scaleX(0) rotate(-360deg);
-        display: none;
-    }
-
-  &:hover > .card__check{
-                        animation: yourchoise 400ms backwards linear;
-                    }
-            
-                    &:not(:hover) > .card__check{
-                        animation: yourchoise2 400ms forwards linear;
-                    }
-
-}*/
-
-//animations-subttl//
 
 @keyframes anim-subttl {
     0%{
@@ -177,12 +117,10 @@ $deco-color02:#008766;
     }
 }
 
-
 //animations-scrolldown//
 @keyframes scrolldownn {
     0%{
         opacity: 0;
-        
     }
     
     30% {
@@ -191,12 +129,10 @@ $deco-color02:#008766;
 
     100%{
         opacity: 1;
-
     }
 }
 
 /***************************/
-
 body {
     padding: 0;
     margin: 0;
@@ -228,11 +164,10 @@ body {
                 
             }
         }
-        
 
         .header__img {
             width: 100%;
-            height: 383px;
+            height: 275px;
             object-fit: cover;
         }
     }
@@ -248,7 +183,7 @@ body {
         background-color: $backgr-color02;
         position: absolute;
         z-index:1;
-        top: 50%;//450
+        top: 330px;//39vh
               
         .main__container {
             position: absolute;
@@ -401,7 +336,6 @@ body {
                 
                 }
             }
-            
 
             .main__btn-commande {
                 display: flex;
@@ -435,7 +369,7 @@ body {
         padding-bottom: 20px;
         position: absolute;
         z-index: 2;
-        top:225%;//1801
+        top:1690px;//227vh
 
         h2 {
             color: white;
@@ -468,7 +402,6 @@ body {
         }
     }
 }        
-
 
 @media (min-width:570px) {
     body {
@@ -513,12 +446,16 @@ body {
     }
 }
 
-
 @media (min-width:768px) {
+    header {
+        .header__img {
+            height: 383px;
+        }
+    }    
     body {
         main{
         width: 80%;
-        top:55%;
+            top:350px;
             .main__container{
                 width: 70%;
                 .main__container-menu {
@@ -531,21 +468,20 @@ body {
             }
         }
         footer{
-            top:230%;
+            top:1710px;
         }
     }
 }
 
 @media (min-width:1060px) {
     main{
-        top:65%
+        top:60vh;
     }
 }
 
 @media (min-width:1370px) {
     body { 
         main{
-            top:60%;
             .main__container{
                 .main__container-menu {
                     .main__card {
@@ -561,17 +497,12 @@ body {
                 }
             }
         }
-        footer{
-            top:235%;
-        }
     }
 }
-
 
 @media (min-width:1440px) {
     body {
         main{
-            top:60%;
             .main__container{
                 .main__container-menu{
                     .main__card {
@@ -590,14 +521,10 @@ body {
             display: flex;
             flex-direction: row-reverse;
             gap:80px;
-            top:235%;
-         
-            
             h2{
                padding-top: 20px;
                margin-block-end: 0;
             }
-        
             ul {
                 display: flex;
                 flex-direction: row;
@@ -607,7 +534,6 @@ body {
                 gap:30px;
                 margin-top:0;
             }
-        
         }
     }
 }

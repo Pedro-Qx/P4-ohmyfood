@@ -71,52 +71,6 @@ a {
     display: none;
   }
 }
-/*****tick qui tourne*****
-@keyframes yourchoise{
-    0% {
-        transform: scaleX(0) rotate(360deg);
-        transform-origin: right;
-        display: none;
-    }
-
-
-    50%,100%{
-        transform: scaleX(0.5) rotate(90deg);
-    }
-    100% {
-
-        transform: scaleX(1) rotate(0deg);
-    }
-}
-
-@keyframes yourchoise2{
-    0% {
-        transform: scaleX(1) rotate(0deg);
-        transform-origin: left;
-
-    }
-
-
-    50%,100%{
-        transform: scaleX(0.5) rotate(-90deg);
-
-
-    }
-    100% {
-
-        transform: scaleX(0) rotate(-360deg);
-        display: none;
-    }
-
-  &:hover > .card__check{
-                        animation: yourchoise 400ms backwards linear;
-                    }
-
-                    &:not(:hover) > .card__check{
-                        animation: yourchoise2 400ms forwards linear;
-                    }
-
-}*/
 @keyframes anim-subttl {
   0% {
     transform: translate(-500rem);
@@ -171,7 +125,7 @@ body header .header__logo-icon i {
 }
 body header .header__img {
   width: 100%;
-  height: 383px;
+  height: 275px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -186,7 +140,7 @@ body main {
   background-color: #F6F6F6;
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: 330px;
 }
 body main .main__container {
   position: absolute;
@@ -345,7 +299,7 @@ body footer {
   padding-bottom: 20px;
   position: absolute;
   z-index: 2;
-  top: 225%;
+  top: 1690px;
 }
 body footer h2 {
   color: white;
@@ -407,9 +361,12 @@ body footer ul li i {
   }
 }
 @media (min-width: 768px) {
+  header .header__img {
+    height: 383px;
+  }
   body main {
     width: 80%;
-    top: 55%;
+    top: 350px;
   }
   body main .main__container {
     width: 70%;
@@ -418,32 +375,23 @@ body footer ul li i {
     left: 92%;
   }
   body footer {
-    top: 230%;
+    top: 1710px;
   }
 }
 @media (min-width: 1060px) {
   main {
-    top: 65%;
+    top: 60vh;
   }
 }
 @media (min-width: 1370px) {
-  body main {
-    top: 60%;
-  }
   body main .main__container .main__container-menu .main__card-ttl .card__subttl-price {
     width: 98%;
   }
   body main .main__container .main__container-menu .main__card .card__check {
     width: 10%;
   }
-  body footer {
-    top: 235%;
-  }
 }
 @media (min-width: 1440px) {
-  body main {
-    top: 60%;
-  }
   body main .main__container .main__container-menu .main__card-price {
     left: 95%;
   }
@@ -454,7 +402,6 @@ body footer ul li i {
     display: flex;
     flex-direction: row-reverse;
     gap: 80px;
-    top: 235%;
   }
   body footer h2 {
     padding-top: 20px;
