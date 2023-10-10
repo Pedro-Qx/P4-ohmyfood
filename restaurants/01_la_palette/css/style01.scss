@@ -78,6 +78,45 @@ $deco-color02:#008766;
 
 
 //animations-tick//
+@keyframes choiseMenu{
+    0% {
+        transform: scaleX(0);
+        transform-origin: right;
+        display: none;
+    }
+    
+      
+    50%,100%{
+        transform: scaleX(0.5);
+    }
+    100% {
+        
+        transform: scaleX(1);
+    }
+}
+
+@keyframes choiseMenuOff{
+    0% {
+        transform: scaleX(1);
+        transform-origin: left;
+        
+    }
+    
+      
+    50%,100%{
+        transform: scaleX(0.5);
+        
+        
+    }
+    100% {
+        
+        transform: scaleX(0);
+        display: none;
+    }
+}
+
+
+/*****tick qui tourne*****
 @keyframes yourchoise{
     0% {
         transform: scaleX(0) rotate(360deg);
@@ -113,8 +152,19 @@ $deco-color02:#008766;
         transform: scaleX(0) rotate(-360deg);
         display: none;
     }
-}
+
+  &:hover > .card__check{
+                        animation: yourchoise 400ms backwards linear;
+                    }
+            
+                    &:not(:hover) > .card__check{
+                        animation: yourchoise2 400ms forwards linear;
+                    }
+
+}*/
+
 //animations-subttl//
+
 @keyframes anim-subttl {
     0%{
         transform: translate(-500rem);
@@ -189,17 +239,16 @@ body {
 
     main {
         width: 100%;
-        height: 1441px;
+        height: 1361px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 50px 50px 0px 0px;
-        background-color: $backgr-color01;
+        background-color: $backgr-color02;
         position: absolute;
         z-index:1;
-        top: 450px;
-        
+        top: 50%;//450
               
         .main__container {
             position: absolute;
@@ -211,7 +260,9 @@ body {
                 padding-top: 50px;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
                 
            
                 .main__ttl {
@@ -229,11 +280,11 @@ body {
                     animation: scrolldownn 2s ease-in backwards 3s;
                 
                 &:hover > i {
-                    animation: heart 1s ease-in-out forwards;
+                    animation: heart 500ms ease-in-out forwards;
                 }
 
                 &:not(:hover)> i {
-                    animation: heart-off 1s ease-in-out;
+                    animation: heart-off 500ms ease-in-out;
                 }
 
                 }
@@ -247,14 +298,14 @@ body {
             }
 
             .main__subttl-entr {
-                animation: anim-subttl 2s ease-in-out;
+                animation: anim-subttl 1s ease-in-out;
             }
             .main__subttl-plat{
-                animation: anim-subttl 2s ease-in-out 500ms;
+                animation: anim-subttl 1s ease-in-out 500ms;
 
             }
             .main__subttl-dess{
-                animation: anim-subttl 2s ease-in-out 1s;
+                animation: anim-subttl 1s ease-in-out 1s;
 
             }
 
@@ -266,10 +317,11 @@ body {
                 align-items: center;
                 gap: 20px;
                 padding-bottom: 40px;
-                animation: scrolldownn 2s ease-in backwards 3s;
+                animation: scrolldownn 2s ease-in backwards 2s;
+                
                 
                 .main__card {
-                    width: 100%;
+                    width: 97%;
                     background-color: white;
                     border-radius: 16px;
                     padding-left: 2%;
@@ -296,7 +348,7 @@ body {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        width: 100%;
+                        width: 96%;
                         
                             .card__subttl {
                                 font-weight: 300;
@@ -321,32 +373,31 @@ body {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        width:20px;
-                        height:20px;
+                        width:12%;
+                        height: 73px;
                         border:solid;
-                        color: $deco-color02;
-                        position: absolute;
-                        top:12px;
-                        left: 92%;
+                        background-color: $deco-color01;
+                        color: white;
+                        border-radius: 0px 16px 16px 0px;
                         z-index: 8;
                         & i {
                             display: inline-block;
-                            width: 18px;
+                            padding: 3px;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50px;
+                            background-color: white;
+                            color: $deco-color01;
                         }
                     }
                 
-                    &:hover {
-                        filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
-                    }
-
-                    &:hover > .card__check{
-                        animation: yourchoise 400ms backwards linear;
-                    }
+                &:hover > .card__check{
+                    animation: choiseMenu 400ms backwards linear;
+                }
             
-                    &:not(:hover) > .card__check{
-                        animation: yourchoise2 400ms forwards linear;
-                    }
-
+                &:not(:hover) > .card__check{
+                    animation: choiseMenuOff 400ms forwards linear;
+                }
                 
                 }
             }
@@ -381,10 +432,10 @@ body {
     footer {
         width: 100%;
         background-color: #353535;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         position: absolute;
         z-index: 2;
-        top:1891px;
+        top:225%;//1801
 
         h2 {
             color: white;
@@ -397,12 +448,15 @@ body {
             display: flex;
             flex-direction: column;
             list-style-type: none;
-            gap:30px;
+            gap:10px;
             margin-top:0;
             padding-inline-start: 20px;
             li{
                 a{
                     color: white;
+                    &:hover {
+                        font-size: 20px;
+                    }
                 }
                 
                 i{
@@ -422,39 +476,40 @@ body {
             .main__container{
                 .main__card {
                     padding-right: 0%;
-                        &-price {
-                          left: 92%;
-                        
-                        }
+                    .card__subttl {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        overflow:visible;
+                        text-overflow:unset;
+                        white-space: nowrap;
+                    }
+
+                    &-price {
+                        left: 92%;
+                    }
+                    .card__check{
+                        width:8%;
+                    }
                 }
             }
         }
         
         footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             ul {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
-                padding-top: 50px;
+                padding-top: 30px;
                 width: 80%;
             }
         }
-        
-    }
-
-    .card__subttl {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-weight: 300;
-        font-size: 15px;
-        margin-top: 0;
-        width: 250px;
-        overflow:visible;
-        text-overflow:unset;
-        white-space: nowrap;
     }
 }
 
@@ -463,35 +518,51 @@ body {
     body {
         main{
         width: 80%;
+        top:55%;
             .main__container{
                 width: 70%;
-
-                .main__ttl-icon {
-                    padding-top: 50px;
-                    padding-left: 10%;
-                    padding-right: 10%;
-                }
-                .main__card {
-                    &-price {
-                       left: 92%;
-                        
+                .main__container-menu {
+                    .main__card {
+                        &-price {
+                            left: 92%;
+                        }
                     }
                 }
             }
         }
+        footer{
+            top:230%;
+        }
     }
 }
 
+@media (min-width:1060px) {
+    main{
+        top:65%
+    }
+}
 
 @media (min-width:1370px) {
     body { 
         main{
+            top:60%;
             .main__container{
-                .main__ttl-icon {
-                    padding-left: 20%;
-                    padding-right: 20%;
+                .main__container-menu {
+                    .main__card {
+                        &-ttl{
+                            .card__subttl-price{
+                                width: 98%;
+                            }
+                        }
+                        .card__check{
+                            width:10%;
+                        }
+                    }
                 }
             }
+        }
+        footer{
+            top:235%;
         }
     }
 }
@@ -500,33 +571,39 @@ body {
 @media (min-width:1440px) {
     body {
         main{
+            top:60%;
             .main__container{
-                .main__card {
-                    &-price {
-                       left: 95%;
+                .main__container-menu{
+                    .main__card {
+                        &-price {
+                          left: 95%;
+                        }   
                     }
                 }
-            }
+            }            
         }
-        
+
         footer {
-            padding-top: 60px;
+            padding-top: 30px;
             padding-right: 100px;
             padding-bottom: 40px;
             display: flex;
             flex-direction: row-reverse;
             gap:80px;
+            top:235%;
+         
             
             h2{
                padding-top: 20px;
                margin-block-end: 0;
             }
-    
+        
             ul {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: flex-end;
+                margin-bottom: 0;
                 gap:30px;
                 margin-top:0;
             }
