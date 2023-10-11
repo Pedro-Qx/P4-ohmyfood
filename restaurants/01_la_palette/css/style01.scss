@@ -76,7 +76,6 @@ $deco-color02:#008766;
     0% {
         transform: scaleX(0);
         transform-origin: right;
-        display: none;
     }
     
       
@@ -101,10 +100,10 @@ $deco-color02:#008766;
     }
     100% {
         transform: scaleX(0);
-        display: none;
     }
 }
 
+//animation tittles comes in//
 @keyframes anim-subttl {
     0%{
         transform: translate(-500rem);
@@ -117,7 +116,7 @@ $deco-color02:#008766;
     }
 }
 
-//animations-scrolldown//
+//animations-menu appears//
 @keyframes scrolldownn {
     0%{
         opacity: 0;
@@ -183,7 +182,7 @@ body {
         background-color: $backgr-color02;
         position: absolute;
         z-index:1;
-        top: 330px;//39vh
+        top: 330px;
               
         .main__container {
             position: absolute;
@@ -214,14 +213,13 @@ body {
                     font-size: 28px;
                     animation: scrolldownn 2s ease-in backwards 3s;
                 
-                &:hover > i {
-                    animation: heart 500ms ease-in-out forwards;
-                }
+                    &:hover > i {
+                        animation: heart 500ms ease-in-out forwards;
+                    }
 
-                &:not(:hover)> i {
-                    animation: heart-off 500ms ease-in-out;
-                }
-
+                    &:not(:hover)> i {
+                        animation: heart-off 500ms ease-in-out;
+                    }
                 }
             }
 
@@ -265,6 +263,7 @@ body {
                     position: relative;
                     @include shadow02;
                     
+                    
                     &-ttl {
                         display: flex;
                         flex-direction: column;
@@ -305,7 +304,7 @@ body {
                     }
 
                     .card__check{
-                        display: flex;
+                        display: none;
                         justify-content: center;
                         align-items: center;
                         width:12%;
@@ -315,6 +314,7 @@ body {
                         color: white;
                         border-radius: 0px 16px 16px 0px;
                         z-index: 8;
+                        
                         & i {
                             display: inline-block;
                             padding: 3px;
@@ -326,17 +326,21 @@ body {
                         }
                     }
                 
-                &:hover > .card__check{
+                    &:hover{
+                        filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+                    }
+                    
+                    &:hover > .card__check {
+                    display: flex;
                     animation: choiseMenu 400ms backwards linear;
-                }
+                    
+                    }
             
-                &:not(:hover) > .card__check{
+                    &:not(:hover) > .card__check {
                     animation: choiseMenuOff 400ms forwards linear;
-                }
-                
+                    }
                 }
             }
-
             .main__btn-commande {
                 display: flex;
                 justify-content: center;
@@ -358,7 +362,12 @@ body {
                     font-weight: 500;
                     @include grad-color;
                     @include shadow01;
+                    
+                    &:hover{
+                        filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+                    }
                 }
+                
             }
         }
     }
