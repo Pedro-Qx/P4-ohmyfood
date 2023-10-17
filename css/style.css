@@ -467,6 +467,9 @@ body footer ul {
 body footer ul li a {
   color: white;
 }
+body footer ul li a:hover {
+  font-size: 20px;
+}
 body footer ul li i {
   color: white;
   font-size: 16px;

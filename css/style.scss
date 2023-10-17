@@ -125,7 +125,9 @@ $deco-color0:#003A68;
 
 @keyframes load {
   0% { left: 0; height: 51px; width: 15px }
+  30% { height: 24px; width: 23px;}
   50% { height: 8px; width: 40px }
+  80% { height: 48px; width: 32px;}
   100% { left: 400px; height: 51px; width: 15px}
 }
 
@@ -171,7 +173,7 @@ body {
         align-items: center;
         height: 100vh;            
         background-color: #353535;
-        animation: loadersetoff 5s forwards;
+        animation: loadersetoff 3s forwards;
         
            
         .loader {
@@ -190,15 +192,15 @@ body {
                 color:white;
             }
             .anim-oh{
-                animation: anim1s 1s backwards;
+                animation: anim1s 500ms backwards;
             }
 
             .anim-my {
-                animation: anim1s 1s backwards 1s;
+                animation: anim1s 500ms backwards 500ms;
             }
 
             .anim-food{
-                animation: anim1s 1s backwards 2s;
+                animation: anim1s 500ms backwards 1s;
             }
                                         
             &::before, &::after {
@@ -208,7 +210,7 @@ body {
                 height: 15px;
                 background: $grad-color;
                 position: absolute;
-                animation: load .7s alternate ease-in-out 6;
+                animation: load .7s alternate ease-in-out 4;
             }
             
             &::before {
@@ -519,11 +521,11 @@ body {
                                 
                                
                             &:hover > i {
-                                animation: heart 1s ease-in-out forwards;
+                                animation: heart 500ms ease-in-out forwards;
                             }
 
                             &:not(:hover)> i {
-                                animation: heart-off 1s ease-in-out;
+                                animation: heart-off 500ms ease-in-out;
                             }
                         }
                     }
@@ -554,6 +556,9 @@ body {
             li {
                a {
                     color: white;
+                    &:hover {
+                        font-size: 20px;
+                    }
                 }
             
 
